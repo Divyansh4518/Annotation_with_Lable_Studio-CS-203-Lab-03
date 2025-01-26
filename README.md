@@ -28,7 +28,6 @@ This repository contains the code, annotations, and documentation for a lab assi
 
 ## Repository Structure
 
-
 project/
 ├── annotations/                  # Exported annotation files (JSON/CSV)
 │   ├── nlp_annotations.csv
@@ -115,8 +114,8 @@ By submitting this assignment, we confirm that we have followed IITGN's honor co
 ---
 
 ## Team Members
-1. [Your Name]
-2. [Teammate's Name]
+1. [Divyansh Saini]
+2. [Gaurav Srivastava]
 
 
 ---
