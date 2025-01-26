@@ -1,4 +1,5 @@
 import pandas as pd
+import json as json
 def create_annotation_dataframe(csv_file_path):
     """
     Creates a Pandas DataFrame from Label Studio exported CSV data,
@@ -10,7 +11,7 @@ def create_annotation_dataframe(csv_file_path):
     Returns:
         pandas.DataFrame: DataFrame with columns 'word' and 'tag'.
     """
-    df = pd.read_csv(file_path)
+    df = pd.read_csv(csv_file_path)
     annotation_data = []
 
     for index, row in df.iterrows():
@@ -36,14 +37,14 @@ def create_annotation_dataframe(csv_file_path):
     return annotation_df
 
 # Example usage:
-csv_file1 = 'nlp_data1.csv'
-csv_file2 = 'nlp_data2.csv'
+csv_file1 = 'data/nlp_data1.csv'
+csv_file2 = 'data/nlp_data2.csv'
 
 annotation_df = create_annotation_dataframe(csv_file1)
 annotation_df = create_annotation_dataframe(csv_file2)
 
 annotation_data2= annotation_df.to_csv('annotation_data1.csv', index = True)
-annotation_data2= annotation_df.to_csv('annotation_data1.csv', index = True)
+annotation_data2= annotation_df.to_csv('annotation_data2.csv', index = True)
 
 def compare_annotation_datasets(csv_file1_path, csv_file2_path):
     """
@@ -81,9 +82,9 @@ def compare_annotation_datasets(csv_file1_path, csv_file2_path):
 
     return list1, list2
 
-# Example usage:
-csv_file1 = 'annotation_data1.csv' # Replace with your actual file path for dataset 1
-csv_file2 = 'annotation_data2.csv' # Replace with your actual file path for dataset 2
+
+csv_file1 = 'annotation_data1.csv'
+csv_file2 = 'annotation_data2.csv'
 
 common_words_list1, common_words_list2 = compare_annotation_datasets(csv_file1, csv_file2)
 
@@ -91,7 +92,6 @@ print("List 1 (from annotation_data1):")
 print(common_words_list1)
 print("\nList 2 (from annotation_data2):")
 print(common_words_list2)
-
 from sklearn.metrics import cohen_kappa_score
 
 def calculate_cohen_kappa(list1, list2):
@@ -120,8 +120,6 @@ def calculate_cohen_kappa(list1, list2):
     kappa_score = cohen_kappa_score(tags1, tags2)
     return kappa_score
 
-# Assuming you have already run the previous code and have:
-# common_words_list1, common_words_list2
 
 kappa = calculate_cohen_kappa(common_words_list1, common_words_list2)
 
@@ -169,8 +167,8 @@ def extract_truck_info(csv_file_path):
 
 # Example usage:
 file_path1 = 'mine_cv.csv'
-file_path2 = 'other.csv'
-file_path3 = 'teammate.csv'
+file_path2 = 'other_cv.csv'
+file_path3 = 'teammate_cv.csv'
 
 truck_info_df1 = extract_truck_info(file_path1)
 truck_info_df2 = extract_truck_info(file_path2)
