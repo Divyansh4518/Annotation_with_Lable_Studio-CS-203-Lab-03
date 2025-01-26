@@ -112,14 +112,10 @@ project/
 By submitting this assignment, we confirm that we have followed IITGN's honor code. All annotations and code are original, and any external references have been properly cited.
 
 ---
-
+## Team Number - 11
+---
 ## Team Members
 1. [Divyansh Saini]
 2. [Gaurav Srivastava]
 
 
----
-
-### Customization Tips:
-- Replace placeholders like your-username, your-repo-name, and team member names with actual details.
-- Include a requirements.txt file in the repository if you have specific dependencies.
